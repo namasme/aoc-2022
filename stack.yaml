@@ -1,0 +1,8 @@
+packages:
+- .
+resolver:
+  # I had to change the compiler to point to the specific version I had installed, but then it conflicted
+  # with the versions in the latest snapshot. Adding the url parameter to point to a specific version
+  # of the snapshot was incompatible with specifying the compiler, so I deleted that and it worked.
+  # I should look a bit more into this when time allows.
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/18/18.yaml

@@ -1,0 +1,55 @@
+name:                aoc2022
+version:             0.1.0.0
+github:              "cronos2/aoc2022"
+license:             BSD3
+author:              "Nacho Mas"
+maintainer:          "ignaciomasmesa@gmail.com"
+copyright:           "2022 Nacho Mas"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/aoc2022#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+    - containers
+    - split
+
+executables:
+  aoc2022-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2022
+    - containers
+    - split
+
+tests:
+  aoc2022-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2022
+    - containers
+    - hspec
+    - split
