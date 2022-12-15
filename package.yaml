@@ -26,6 +26,7 @@ library:
   dependencies:
     - containers
     - microlens-platform
+    - mtl
     - parsec
     - split
 
@@ -41,6 +42,7 @@ executables:
     - aoc2022
     - containers
     - microlens-platform
+    - mtl
     - parsec
     - split
 
@@ -56,6 +58,7 @@ tests:
     - aoc2022
     - containers
     - microlens-platform
+    - mtl
     - hspec
     - parsec
     - split
