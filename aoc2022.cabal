@@ -31,6 +31,8 @@ library
       Day11.First
       Day11.First.Internal
       Day11.Second
+      Day12.First
+      Day12.Second
       Day2.First
       Day2.Second
       Day3.First
@@ -51,6 +53,7 @@ library
       Day9.Second
       Lib
       Utils.Common
+      Utils.Graphs
       Utils.Spatial
   other-modules:
       Paths_aoc2022
@@ -92,6 +95,8 @@ test-suite aoc2022-test
       Day10.SecondSpec
       Day11.FirstSpec
       Day11.SecondSpec
+      Day12.FirstSpec
+      Day12.SecondSpec
       Day2.FirstSpec
       Day2.SecondSpec
       Day3.FirstSpec
@@ -109,6 +114,7 @@ test-suite aoc2022-test
       Day9.FirstSpec
       Day9.SecondSpec
       Utils.CommonSpec
+      Utils.GraphsSpec
       Utils.SpatialSpec
       Paths_aoc2022
   hs-source-dirs:

@@ -35,3 +35,11 @@ move (Point2D x y) L = Point2D (x - 1) y
 move (Point2D x y) U = Point2D x (y + 1)
 move (Point2D x y) R = Point2D (x + 1) y
 move (Point2D x y) D = Point2D x (y - 1)
+
+vonNeumannNeighbours :: Point2D -> [Point2D]
+vonNeumannNeighbours (Point2D x0 y0) =
+  [ Point2D (x0 + 1) y0
+  , Point2D x0 (y0 + 1)
+  , Point2D x0 (y0 - 1)
+  , Point2D (x0 - 1) y0
+  ]

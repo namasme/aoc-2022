@@ -1,6 +1,6 @@
 module Utils.SpatialSpec (spec) where
 
-import Utils.Spatial (Direction(..), Point2D(..), move, squaredModulus)
+import Utils.Spatial
 import Test.Hspec
 
 spec :: Spec
@@ -29,3 +29,7 @@ spec = do
       move (Point2D 1 1) U `shouldBe` Point2D 1 2
       move (Point2D 1 1) R `shouldBe` Point2D 2 1
       move (Point2D 1 1) D `shouldBe` Point2D 1 0
+
+    it "von Neumann neighbours" $ do
+      vonNeumannNeighbours (Point2D 1 1) `shouldBe`
+        [Point2D 2 1, Point2D 1 2, Point2D 1 0, Point2D 0 1]
