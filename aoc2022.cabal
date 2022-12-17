@@ -33,6 +33,9 @@ library
       Day11.Second
       Day12.First
       Day12.Second
+      Day13.First
+      Day13.First.Internal
+      Day13.Second
       Day2.First
       Day2.Second
       Day3.First
@@ -97,6 +100,8 @@ test-suite aoc2022-test
       Day11.SecondSpec
       Day12.FirstSpec
       Day12.SecondSpec
+      Day13.FirstSpec
+      Day13.SecondSpec
       Day2.FirstSpec
       Day2.SecondSpec
       Day3.FirstSpec
