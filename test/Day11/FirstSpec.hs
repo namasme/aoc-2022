@@ -4,6 +4,7 @@ import Control.Monad.Writer
 import Data.Map ((!))
 import qualified Data.Map as M
 import Lens.Micro.Platform
+import Utils.Common (iterateM)
 import Day11.First.Internal
 import Day11.First
 import Test.Hspec

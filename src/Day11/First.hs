@@ -11,6 +11,7 @@ import Data.List (sort)
 import Data.Maybe (fromJust)
 import qualified Data.Map as M
 import Lens.Micro.Platform
+import Utils.Common (iterateM)
 import Day11.First.Internal
   ( Item
   , Monkey(..)
@@ -42,11 +43,6 @@ data Throw =
     }
   deriving (Eq, Show)
 type ItemReducer = Item -> Item
-
--- There might be a reason why this function does not exist, but I am yet to find it.
--- There is probably an alternative way to do it with sequence, but I am yet to find it too.
-iterateM :: Monad m => (a -> m a) -> m a -> [m a]
-iterateM f ma = ma : iterateM f (ma >>= f)
 
 monkeyBusiness :: ThrowsCounter -> Int
 monkeyBusiness = (\[x, y] -> x * y) . take 2 . reverse . sort . M.elems . counter

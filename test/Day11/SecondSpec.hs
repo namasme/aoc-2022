@@ -2,6 +2,7 @@ module Day11.SecondSpec (spec) where
 
 import Control.Monad.Writer
 import qualified Data.Map as M
+import Utils.Common (iterateM)
 
 import Day11.Second
 import Test.Hspec

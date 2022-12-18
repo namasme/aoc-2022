@@ -10,13 +10,13 @@ module Day11.Second
 import Control.Monad.Writer
 import qualified Data.Map as M
 import Lens.Micro.Platform
+import Utils.Common (iterateM)
 
 import Day11.First.Internal (Modulus)
 import Day11.First
   ( Item
   , Troop
   , counter
-  , iterateM
   , modulus
   , monkeyBusiness
   , monkeyRound
