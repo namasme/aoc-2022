@@ -23,3 +23,8 @@ spec = do
       let result = iterateM f (Just 0)
 
       takeWhile isJust result `shouldBe` map Just [0 .. 5]
+
+    it "applies repeatedly (finite amount)" $ do
+      iterateN 5 succ 0 `shouldBe` 5
+      iterateN 3 tail [1, 2, 3] `shouldBe` []
+      iterateN 0 undefined () `shouldBe` ()

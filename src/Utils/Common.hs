@@ -20,3 +20,7 @@ both f = uncurry ((,) `on` f)
 -- There is probably an alternative way to do it with sequence, but I am yet to find it too.
 iterateM :: Monad m => (a -> m a) -> m a -> [m a]
 iterateM f ma = ma : iterateM f (ma >>= f)
+
+iterateN :: Int -> (a -> a) -> a -> a
+iterateN 0 f a = a
+iterateN n f a = iterateN (pred n) f (f a)
