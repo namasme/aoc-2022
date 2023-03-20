@@ -9,7 +9,7 @@ import Data.Function (on)
 import Data.List (nub, sortBy)
 import Data.Maybe (mapMaybe)
 import Day15.First.Internal (Beacon, Sensor(..), parseInput)
-import Utils.Spatial (Point2D(..))
+import Utils.Spatial (Point2D(..), getX, getY)
 
 type Interval = (Int, Int)
 
@@ -36,12 +36,6 @@ beaconsInSectionCount row beacons intervals = length $ do
 
 liesIn :: Int -> Interval -> Bool
 liesIn x (xMin, xMax) = xMin <= x && x <= xMax
-
-getX :: Point2D -> Int
-getX (Point2D x _) = x
-
-getY :: Point2D -> Int
-getY (Point2D _ y) = y
 
 intervalUnion :: [Interval] -> [Interval]
 intervalUnion = foldr addInterval [] . sortBy (compare `on` snd)

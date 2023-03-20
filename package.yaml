@@ -25,6 +25,7 @@ library:
   source-dirs: src
   dependencies:
     - containers
+    - extra
     - microlens-platform
     - mtl
     - parsec
@@ -41,6 +42,7 @@ executables:
     dependencies:
     - aoc2022
     - containers
+    - extra
     - microlens-platform
     - mtl
     - parsec
@@ -57,6 +59,7 @@ tests:
     dependencies:
     - aoc2022
     - containers
+    - extra
     - microlens-platform
     - mtl
     - hspec
