@@ -25,6 +25,7 @@ library:
   source-dirs: src
   dependencies:
     - containers
+    - dlist
     - extra
     - microlens-platform
     - mtl
@@ -42,6 +43,7 @@ executables:
     dependencies:
     - aoc2022
     - containers
+    - dlist
     - extra
     - microlens-platform
     - mtl
@@ -59,6 +61,7 @@ tests:
     dependencies:
     - aoc2022
     - containers
+    - dlist
     - extra
     - microlens-platform
     - mtl

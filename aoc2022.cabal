@@ -52,6 +52,8 @@ library
       Day19.Second
       Day2.First
       Day2.Second
+      Day20.First
+      Day20.Second
       Day3.First
       Day3.Second
       Day4.First
@@ -79,6 +81,7 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , dlist
     , extra
     , microlens-platform
     , mtl
@@ -97,6 +100,7 @@ executable aoc2022-exe
       aoc2022
     , base >=4.7 && <5
     , containers
+    , dlist
     , extra
     , microlens-platform
     , mtl
@@ -132,6 +136,8 @@ test-suite aoc2022-test
       Day19.SecondSpec
       Day2.FirstSpec
       Day2.SecondSpec
+      Day20.FirstSpec
+      Day20.SecondSpec
       Day3.FirstSpec
       Day3.SecondSpec
       Day4.FirstSpec
@@ -157,6 +163,7 @@ test-suite aoc2022-test
       aoc2022
     , base >=4.7 && <5
     , containers
+    , dlist
     , extra
     , hspec
     , microlens-platform
