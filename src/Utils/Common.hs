@@ -2,6 +2,10 @@ module Utils.Common where
 
 import Data.Function (on)
 
+-- Taken from https://hackage.haskell.org/package/utility-ht-0.0.17/docs/src/Data.List.HT.Private.html#takeUntil
+takeUntil :: (a -> Bool) -> [a] -> [a]
+takeUntil p = foldr (\x ys -> x : if p x then [] else ys) []
+
 -- Like break but it discards the _offending_ character from the output
 splitWhen :: (a -> Bool) -> [a] -> ([a], [a])
 splitWhen p as = (prefix, tail suffix)
@@ -10,7 +14,7 @@ splitWhen p as = (prefix, tail suffix)
 
 -- Like splitWhen but the predicate is implicit (match the provided value)
 splitOn :: Eq a => a -> [a] -> ([a], [a])
-splitOn a = splitWhen (==a)
+splitOn a = splitWhen (== a)
 
 -- Applies the same transformation to both members of a tuple
 both :: (a -> b) -> (a, a) -> (b, b)

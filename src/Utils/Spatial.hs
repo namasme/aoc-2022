@@ -8,6 +8,10 @@ data Direction
   | U
   | R
   | D
+  deriving (Eq, Ord, Show)
+data RotationalDirection
+  = CW
+  | CCW
   deriving (Eq, Show)
 data Point2D =
   Point2D
@@ -66,3 +70,28 @@ vonNeumannNeighbours (Point2D x0 y0) =
   , Point2D x0 (y0 - 1)
   , Point2D (x0 - 1) y0
   ]
+
+rotate :: Direction -> RotationalDirection -> Direction
+rotate L CW = U
+rotate U CW = R
+rotate R CW = D
+rotate D CW = L
+rotate L CCW = D
+rotate U CCW = L
+rotate R CCW = U
+rotate D CCW = R
+
+-- Naming is hard.
+revert :: Direction -> Direction
+revert d = rotate (rotate d CW) CW
+
+measureOrientation :: Direction -> Direction -> Maybe RotationalDirection
+measureOrientation d d'
+  | rotate d CW == d' = Just CW
+  | rotate d CCW == d' = Just CCW
+  | otherwise = Nothing
+
+-- Ditto.
+opposite :: RotationalDirection -> RotationalDirection
+opposite CW = CCW
+opposite CCW = CW
