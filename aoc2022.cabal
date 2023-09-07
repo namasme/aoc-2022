@@ -60,6 +60,8 @@ library
       Day22.CubeParser
       Day22.First
       Day22.Second
+      Day23.First
+      Day23.Second
       Day3.First
       Day3.Second
       Day4.First
@@ -148,6 +150,8 @@ test-suite aoc2022-test
       Day21.SecondSpec
       Day22.FirstSpec
       Day22.SecondSpec
+      Day23.FirstSpec
+      Day23.SecondSpec
       Day3.FirstSpec
       Day3.SecondSpec
       Day4.FirstSpec
