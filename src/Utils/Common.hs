@@ -1,5 +1,6 @@
 module Utils.Common where
 
+import qualified Data.Map as M
 import Data.Function (on)
 
 -- Taken from https://hackage.haskell.org/package/utility-ht-0.0.17/docs/src/Data.List.HT.Private.html#takeUntil
@@ -28,3 +29,8 @@ iterateM f ma = ma : iterateM f (ma >>= f)
 iterateN :: Int -> (a -> a) -> a -> a
 iterateN 0 f a = a
 iterateN n f a = iterateN (pred n) f (f a)
+
+buildMultiMap :: Ord k => [(k, a)] -> M.Map k [a]
+buildMultiMap = foldl update M.empty
+  where
+    update partial (key, value) = M.insertWith (++) key [value] partial

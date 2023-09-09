@@ -1,7 +1,7 @@
 module Utils.GraphsSpec (spec) where
 
 import qualified Data.Map as M
-import Utils.Spatial (Point2D(..), vonNeumannNeighbours)
+import Utils.Spatial (Point2D(..), manhattanDistance, vonNeumannNeighbours)
 
 import Utils.Graphs
 import Test.Hspec
@@ -14,6 +14,30 @@ spec = do
       let manifest = BFSManifest (Point2D 0 0) vonNeumannNeighbours isGoal
 
       runBFS manifest `shouldBe` 6
+
+  describe "A*" $ do
+    it "finds the shortest path" $ do
+      let goal = Point2D 5 5
+      let isGoal = (== goal)
+      -- The map looks like this (origin is marked with 0, goal with G)
+      --
+      -- .#..#G.#.
+      -- .##.##.##
+      -- .........
+      -- .#..#..#.
+      -- .##.##.##
+      -- 0........
+      --
+      let origin = Point2D 0 0
+      let isValidPoint (Point2D i j) =
+            let i' = i `mod` 3
+                j' = j `mod` 3
+             in i' == 0 || j' == 0 || ((i' == 2) && (j' == 2))
+      let neighbours = filter isValidPoint . vonNeumannNeighbours
+      let heuristic = manhattanDistance goal
+      let manifest = AStarManifest origin neighbours isGoal heuristic
+
+      distanceTravelled (runAStar manifest) `shouldBe` 12
 
   describe "Distance matrix" $ do
     it "collects all nodes in a graph from an adjacency list" $ do

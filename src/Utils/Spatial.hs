@@ -57,6 +57,12 @@ getY (Point2D _ y) = y
 squaredModulus :: Point2D -> Int
 squaredModulus (Point2D x y) = x * x + y * y
 
+manhattanDistance :: Point2D -> Point2D -> Int
+manhattanDistance p p' = l1Norm (p - p')
+
+l1Norm :: Point2D -> Int
+l1Norm (Point2D i j) = abs i + abs j
+
 move :: Point2D -> Direction -> Point2D
 move (Point2D x y) L = Point2D (x - 1) y
 move (Point2D x y) U = Point2D x (y + 1)
@@ -69,6 +75,13 @@ vonNeumannNeighbours (Point2D x0 y0) =
   , Point2D x0 (y0 + 1)
   , Point2D x0 (y0 - 1)
   , Point2D (x0 - 1) y0
+  ]
+
+mooreNeighbours :: Point2D -> [Point2D]
+mooreNeighbours (Point2D x0 y0) =
+  [ Point2D (x0 - 1) (y0 + 1), Point2D x0 (y0 + 1), Point2D (x0 + 1) (y0 + 1)
+  , Point2D (x0 - 1) y0,                            Point2D (x0 + 1) y0
+  , Point2D (x0 - 1) (y0 - 1), Point2D x0 (y0 - 1), Point2D (x0 + 1) (y0 - 1)
   ]
 
 rotate :: Direction -> RotationalDirection -> Direction

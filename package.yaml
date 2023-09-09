@@ -30,6 +30,7 @@ library:
     - microlens-platform
     - mtl
     - parsec
+    - pqueue
     - split
 
 executables:
@@ -48,6 +49,7 @@ executables:
     - microlens-platform
     - mtl
     - parsec
+    - pqueue
     - split
 
 tests:
@@ -67,4 +69,5 @@ tests:
     - mtl
     - hspec
     - parsec
+    - pqueue
     - split
