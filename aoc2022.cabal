@@ -64,6 +64,7 @@ library
       Day23.Second
       Day24.First
       Day24.Second
+      Day25.First
       Day3.First
       Day3.Second
       Day4.First
@@ -158,6 +159,7 @@ test-suite aoc2022-test
       Day23.SecondSpec
       Day24.FirstSpec
       Day24.SecondSpec
+      Day25.FirstSpec
       Day3.FirstSpec
       Day3.SecondSpec
       Day4.FirstSpec
